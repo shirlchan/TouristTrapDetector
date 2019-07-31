@@ -1,0 +1,80 @@
+<html>
+    <head>
+      <title>Little Italy</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+      <nav>
+    <div class="nav-wrapper blue darken-4">
+      <a href="#" class="brand-logo center">Tourist Trap Detector</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/index">Home Page</a></li>
+        <li class="active"><a href="/places">Tourist Traps</a></li>
+        <li><a href="/submittrap">Submit a Trap</a></li>
+      </ul>
+    </div>
+    </nav>
+    
+     <div class="parallax-container">
+        <div class="parallax"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Colour-changing_%27Little_Italy%27_sign_on_Mulberry_St_%28Blue%29.jpg"></div>
+    </div>
+     <div class="container">
+         <h4>Little Italy</h4>
+        
+        <div class="review-list">
+        <ul>
+          
+          {% for reviews in reviewLI %}
+          <div class="divider"></div>
+              <div class="section">
+                <h5>{{reviews.user.name}} rates this place a {{reviews.rating}}.</h5>
+            <li>{{ reviews.text }} <a href={{reviews.url}}>..more</a> </li>
+          </div>
+          {% endfor %}
+        </ul>
+        
+      </div>
+      
+        
+        
+      </div>
+      <br><br>
+       <footer class="page-footer blue darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Tourist Trap Detector</h5>
+                <p class="grey-text text-lighten-4"> <i class="material-icons">email</i> dontusethisemail445@gmail.com</p>
+                <p class="grey-text text-lighten-4"> <i class="material-icons">local_phone</i> (000) 000-0000</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">About Us</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">This web application was created by <br>Luis Garcia and Shirley Chan as a project in the FinTech Focus Program.</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright Tourist Trap Detector, these reviews were taken from the Yelp API
+            </div>
+          </div>
+        </footer>
+        
+        
+        
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <script>
+         $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+    </script>
+    </body>
+</html>
